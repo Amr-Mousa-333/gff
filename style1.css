@@ -1,0 +1,22 @@
+#section-div{
+    /* background-color:red ; */
+    margin: auto;
+    width: 80%;
+    height: 30px;
+}
+.item1,.item2 ,.item3{
+    width: 30%;
+    height: 20px;
+    display: inline-block;
+    background-color: aquamarine;
+    margin-top: 3px;
+}
+.item1{
+    margin-left:5px ;
+}
+.item2 , .item3{
+    margin-left: 8px;
+    justify-content: center;
+    text-align: center;
+}
+

@@ -1,0 +1,13 @@
+.section-div{
+    background-color: aqua; 
+    width: 80%; 
+    height: 500px;
+    margin: auto;
+}
+.item1,.item2,.item3{
+    width: 30%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+    overflow-wrap: break-word;
+}

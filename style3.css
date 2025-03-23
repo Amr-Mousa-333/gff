@@ -1,0 +1,24 @@
+.section-div{
+    width: 80%;
+    height: 500px;
+    margin: auto;
+}
+.img , .txt{
+    display: inline-block;
+    width: 48%;
+    height: 160px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.img{
+    margin-top: 5%;
+    width: 500px;
+    margin-right: 20px;
+}
+.list-true{
+
+        list-style: none;
+        padding:0;
+}
+.list-true li::before { 
+    content: "✅";
+    margin-right: 8px;}

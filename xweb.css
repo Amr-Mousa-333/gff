@@ -1,0 +1,184 @@
+nav{
+    display:flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 50px;
+background-color: rgba(229, 218, 218, 0.551);
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: initial;
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: larger;
+
+}
+.nav-links a:hover  {
+    color: orange;
+}
+.nav-links a{
+    margin-right: 30px;
+}
+.join-btn {
+    background-color: orange;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* ------------------------- */
+section {
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+.who-we-are {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.who-we-are .content {
+    flex: 1;
+}
+
+.who-we-are h2 {
+    color: orange;
+    font-size: 28px;
+}
+
+.who-we-are p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.who-we-are .btn {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    padding: 10px 15px;
+    text-decoration:none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.who-we-are .image img {
+    width: 100%;
+    border-radius: 10px;
+    max-width: 500px;
+}
+/* ---------------------- */
+.what-we-do {
+    text-align: left;
+}
+
+.what-we-do h2 {
+    color: orange;
+    font-size: 28px;
+}
+
+.what-we-do p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.what-we-do .image img {
+    width: 100%;
+    border-radius: 10px;
+    max-width: 500px;
+}
+/* =================== */
+
+footer {
+    background-color: #3d2e1f;
+    color: white;
+    padding: 30px 50px;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-content div {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+footer h3 {
+    color: orange;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: orange;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .who-we-are,
+    .what-we-do {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .who-we-are .image img,
+    .what-we-do .image img {
+        max-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center; 
+    }
+}
+.section , .content{
+    text-align: center;
+}
