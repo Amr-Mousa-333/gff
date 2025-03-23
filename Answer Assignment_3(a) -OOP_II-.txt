@@ -1,0 +1,234 @@
+a)
+
+Inheritance : is the ability in object-oriented programming to 
+              derive new classes from existing classes. 
+
+              Every class you define in Java is inherited from an 
+              existing class either explicitly or implicitly. 
+
+              A class C1 is derived from another class c2 is 
+              called a subclass , and c2 is called a superclass.
+
+              A subclass inherits functionality from its superclass, 
+              and also creates new data and new methods. 
+
+              Subclasses usually have more functionality than their 
+              superclasses.
+
+method overriding : Sometimes it is necessary for the subclass to modify methods 
+                    defined in the superclass.
+
+                    The method must be defined in the subclass using the same signature 
+                    as in the superclass.
+
+Polymorphism: An object of a subclass can be used by any code
+              designed to work with an object of its superclass.
+
+              For example, If a method expects a parameter of a superclass type
+              (e.g. GeometricObject ), You can invoke it with any of the 
+              subclasses (e.g. Circle object) . A Circle object can be used as both a 
+              Circle object and a GeometricObject object.
+
+// PUBLICATION class
+class PUBLICATION {
+    private String title;
+    private int year;
+    private double price;
+
+    public PUBLICATION() {
+        title = "";
+        year = 0;
+        price = 0.0;
+    }
+    public PUBLICATION(String title, int year, double price) {
+        this.title = title;
+        this.year = year;
+        this.price = price;
+    }
+
+    public void print() {
+        System.out.println("Title: " + title);
+        System.out.println("Year: " + year);
+        System.out.println("Price: $" + price);
+    }
+
+    @Override
+    public String toString() {
+        return "PUBLICATION: " + title;
+    }
+}
+
+// BOOK class (subclass of PUBLICATION)
+class BOOK extends PUBLICATION {
+    private int pageCount;
+
+    public BOOK() {
+        super();
+        pageCount = 0;
+    }
+    public BOOK(String title, int year, double price, int pageCount) {
+        super(title, year, price);
+        this.pageCount = pageCount;
+    }
+
+    @Override
+    public void print() {
+        super.print();
+        System.out.println("Page Count: " + pageCount);
+    }
+
+    @Override
+    public String toString() {
+        return "BOOK: " + super.toString();
+    }
+}
+
+// TAPE class (subclass of PUBLICATION)
+class TAPE extends PUBLICATION {
+    private int playTime;
+
+    public TAPE() {
+        super();
+        playTime = 0;
+    }
+    public TAPE(String title, int year, double price, int playTime) {
+        super(title, year, price);
+        this.playTime = playTime;
+    }
+
+    @Override
+    public void print() {
+        super.print();
+        System.out.println("Playing Time: " + playTime + " minutes");
+    }
+
+    @Override
+    public String toString() {
+        return "TAPE: " + super.toString();
+    }
+}
+
+// TestPublication class
+public class TestPublication {
+    public static void main(String[] args) {
+        // Creating a book object
+        BOOK book = new BOOK("Java Programming", 2022, 39.99, 500);
+
+        // Creating a tape object
+        TAPE tape = new TAPE("Learn Java in 30 Minutes", 2023, 19.99, 30);
+
+        // Invoking print() and toString() methods for book
+        System.out.println("Printing Book Details:");
+        book.print();
+        System.out.println("ToString: " + book.toString());
+        System.out.println();
+
+        // Invoking print() and toString() methods for tape
+        System.out.println("Printing Tape Details:");
+        tape.print();
+        System.out.println("ToString: " + tape.toString());
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+b) 
+
+// VEHICLE class
+class VEHICLE {
+    protected String vehicleId;
+    protected double price;
+    protected String plateNumber;
+
+    public VEHICLE() {
+        vehicleId = "";
+        price = 0.0;
+        plateNumber = "";
+    }
+    
+    public VEHICLE(String vehicleId, double price, String plateNumber) {
+        this.vehicleId = vehicleId;
+        this.price = price;
+        this.plateNumber = plateNumber;
+    }
+
+    public void print() {
+        System.out.println("Vehicle ID: " + vehicleId);
+        System.out.println("Price: $" + price);
+        System.out.println("Plate Number: " + plateNumber);
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " - Plate Number: " + plateNumber;
+    }
+}
+
+// CAR class
+class CAR extends VEHICLE {
+    private int numberOfPassengers;
+    private int maxSpeed;
+
+    public CAR() {
+        super();
+        numberOfPassengers = 0;
+        maxSpeed = 0;
+    }
+    
+    public CAR(String vehicleId, double price, String plateNumber, int numberOfPassengers, int maxSpeed) {
+        super(vehicleId, price, plateNumber);
+        this.numberOfPassengers = numberOfPassengers;
+        this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public void print() {
+        super.print();
+        System.out.println("Number of Passengers: " + numberOfPassengers);
+        System.out.println("Max Speed: " + maxSpeed + " mph");
+    }
+}
+
+// TRUCK class
+class TRUCK extends VEHICLE {
+    private double tonnage;
+    private int numberOfAxles;
+
+    public TRUCK() {
+        super();
+        tonnage = 0.0;
+        numberOfAxles = 0;
+    }
+    
+    public TRUCK(String vehicleId, double price, String plateNumber, double tonnage, int numberOfAxles) {
+        super(vehicleId, price, plateNumber);
+        this.tonnage = tonnage;
+        this.numberOfAxles = numberOfAxles;
+    }
+
+    @Override
+    public void print() {
+        super.print();
+        System.out.println("Tonnage: " + tonnage + " tons");
+        System.out.println("Number of Axles: " + numberOfAxles);
+    }
+}
+
+// Test class
+public class VehicleTest {
+    public static void main(String[] args) {
+        CAR car = new CAR("C001", 30000.0, "ABC123", 4, 120);
+        TRUCK truck = new TRUCK("T001", 50000.0, "XYZ789", 10.5, 6);
+
+        // Print details using print() method
+        System.out.println("Car Details:");
+        car.print();
+        System.out.println("\nTruck Details:");
+        truck.print();
+
+        System.out.println("\n-----------------------------------------");
+
+        // Print class name and plate number using toString() method
+        System.out.println(car.toString());
+        System.out.println(truck.toString());
+    }
+}
